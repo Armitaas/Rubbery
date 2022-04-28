@@ -1,0 +1,79 @@
+stealables = ["tv","refregirator","laptop","jewelries","watches"]
+choosen=[]
+print("Whenever you were done, just type 'scape'")
+print(stealables)
+ask = input("here is what you can steal.which one are you interested in? ")
+
+tv_price= 6000000
+tv_weight=7.5
+
+refregirator_price= 22000000
+refregirator_weight=234
+
+laptop_price=26000000
+laptop_weight=1.5
+
+jewelries_price=3500000
+jewelries_weight=0.430
+
+watches_price=34000000
+watches_weight=1.2
+
+def steal():
+    while True:
+        global ask
+        global choosen
+        if ask=="tv":
+            worth=tv_price/tv_weight
+            if worth>95000 :
+                print("Pick it  up!")
+                choosen+=["tv"]
+            else:
+                    print("ُSkip it")
+            ask=input("What else? ")        
+        elif ask=="refregirator":
+            worth=refregirator_price/refregirator_weight
+            if worth>95000 :
+               print("Pick it  up")
+               choosen+=["refregirator"]
+            else:
+                print("Skip it!")
+            ask=input("What else? ")            
+        elif ask=="jewelries":
+            worth=jewelries_price/jewelries_weight
+            if worth>95000:
+                print("Pick it up!")
+                choosen+=["jewelries"]
+            else:
+                print("Skip it!")
+            ask=input("What else? ")    
+        elif ask=="watches":
+            worth=watches_price/watches_weight
+            if worth>95000:
+                print("Pick it up")
+                choosen+=["watches"]
+            else:
+                print("Skip it!")
+            ask=input("What else? ")    
+        elif ask=="laptop":
+            worth=laptop_price/laptop_weight
+            if worth>95000:
+                print("Pick it up")
+                choosen+=["laptop"]
+            else:
+                print("Skip it!")
+            ask=input("What else? ")
+        elif ask=="scape":
+            break
+            
+        else:
+            print("What you want is not accessable.")
+            ask=input("Try another one... :")
+            steal()
+        
+        
+steal() 
+print()
+print("So pick these items up and run!!!")
+final_choosens=list(set(choosen))
+print(final_choosens)
